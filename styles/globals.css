@@ -1,107 +1,246 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+       opacity: 0.9;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+.scale-85 {
+       --tw-scale-x: .85;
+       --tw-scale-y: .85;
+       transform: var(--tw-transform);
+}
+/* width */
+::-webkit-scrollbar {
+          opacity: 0;
+          width: 2px;
+}
+.swiper {
+       width: 600px;
+       height: 300px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+            background: transparent;
+            opacity: 1;
+          
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Handle */
+::-webkit-scrollbar-thumb {
+          background: #888;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+          background: #555;
+          opacity: 1;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+
+#style-3::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          background-color: transparent;
+                 height: 2px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+#style-3::-webkit-scrollbar {
+          width: 6px;
+          background-color: transparent;
+                 height: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+#style-3::-webkit-scrollbar-thumb {
+          background-color: #000000;
+                  height: 2px;         
+}
+
+
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+
+.font-my-inter-100{
+          font-family: 'Open Sans',sans-serif;
+          font-weight: 110;
+}
+.font-my-inter-200 {
+          font-family: 'Open Sans',sans-serif;
+          font-weight: 200;
+}
+.font-my-inter-300 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 300;
+}
+.font-my-inter-400 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 400;
+}
+.font-my-inter-500 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 500;
+}
+.font-my-inter-600 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 600;
+}
+.font-my-inter-700 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+}
+.font-my-inter-800 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 800;
+}
+.font-my-inter-900 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 900;
+}
+
+@keyframes ping {
+
+       0% {
+              transform: scale(0),rotate(-180deg);
+              opacity: 0;
+       }
+       50% {
+              transform: scale(1);
+              opacity: 1;
+       }
+       100%{
+              transform: scale(0),rotate(180deg);
+              opacity: 0;
+       }
+}
+@keyframes pingLogo {
+
+       0% {
+              transform: rotate(180deg);
+              opacity: 0;
+       }
+
+       50% {
+              transform: scale(1);
+              opacity: 1;
+       }
+
+       100% {
+              transform: scale(1);
+              opacity: 1;
+       }
+}
+
+.animate-ping-2 {
+       animation: ping 2s cubic-bezier(1, 0.7, 0.3, 1) infinite;
+}
+.animate-ping-2d {
+       animation: ping 2s  cubic-bezier(1, 0.7, 0.3, 1) infinite;
+       animation-delay: 1s;
+}
+.animate-ping-4 {
+       animation: ping 4s cubic-bezier(1, 0.7, 0.3, 1) infinite;
+}
+.animate-ping-logo {
+       animation: pingLogo 2s cubic-bezier(1, 0.7, 0.3, 1) ;
+       animation-iteration-count: 1;
+}
+
+#hideMe {
+       -webkit-animation: cssAnimation 4s forwards;
+       animation: cssAnimation 4s forwards;
+}
+.top{
+       z-index: 100;
+}
+
+@keyframes cssAnimation {
+       0% {
+              opacity: 1;
+              transform: scale(0);
+              transform: skewY(0deg);
+              transform: translateX(-80px);
+       }
+
+       60% {
+              opacity: 1;
+              transform: scale(0.3);
+              transform: skewY(2deg);
+              transform: translateX(0px);
+
+       }
+
+       100% {
+              opacity: 0;
+              transform: scale(1);
+              transform: translateX(80px);
+       }
+}
+
+@-webkit-keyframes cssAnimation {
+       0% {
+              opacity: 1;
+              transform: scale(0);
+       }
+
+       50% {
+              opacity: 1;
+              transform: scale(0.3);
+       }
+
+       100% {
+              opacity: 0;
+              transform: scale(1);
+       }
+}
+
+
+
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  display: inline-block;
+
+  height: 400px;
+  width: 100%;
+  border-radius: 40px;
+}
+
+/* Buttons */
+
+.slideshowDots {
+  text-align: center;
+}
+
+.slideshowDot {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  margin: 15px 7px 0px;
+
+  background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+  background-color: #6a0dad;
 }
